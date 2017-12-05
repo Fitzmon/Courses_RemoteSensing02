@@ -2,5 +2,16 @@ What's frequency domain?
 
 What's Fourier transform?
 
+什么是频率域
+  横坐标-频率：单位时间内完成周期性变化的次数
+  纵坐标-振幅：振动的物理量可能达到的最大值
+  参考资料：
+    https://zhuanlan.zhihu.com/p/19763358?from=singlemessage&isappinstalled=1
 
+滤波有3种：低通滤波；高通滤波；带通滤波
+频率域滤波的基本工作流程：空间域图像的傅立叶变换->频率域图像->设计滤波器->傅立叶逆变换->其他应用
+  *滤波的关键是正确选择滤波器并确定合适的通或阻的频率
+常用的滤波器有5种：低通滤波器；高通滤波器；带通滤波器；带阻滤波器；自定义滤波器
 
+常用的低通滤波器：理想低通滤波器(IDPF) Butterworth低通滤波器(BLPF) 指数低通滤波器(ELPF) 高斯低通滤波器(GLPF)
+常用的高通滤波器：理想高通滤波器(IHPF) Butterworth高通滤波器(BHPF) 指数高通滤波器(EHPF) 高斯高通滤波器(GHPF)
