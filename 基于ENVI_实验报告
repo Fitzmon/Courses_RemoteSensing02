@@ -7,6 +7,21 @@
 实验数据获取
  USGA https://glovis.usgs.gov/
 
+------|知识点补充|------
+ -Map Info 地图信息
+  ·Proj 投影
+  ·Pixel 影像空间分辨率
+  ·Datum 基准面
+  ·UL Geo 地理坐标经纬度
+  ·UL Map 地图坐标
+ -
+
+存在问题
+ 1.下载的遥感影像数据
+  -Map Info
+   ·Pixel 0.000021 Degrees 影像空间分辨率的单位
+   ·UL Map 没有地图坐标的信息
+
 1.几何校正
   选取控制点
   投影
