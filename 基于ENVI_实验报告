@@ -1,11 +1,15 @@
 综合性实验报告
 
-实验工具：1)ENVI5.3 2)LocaSpace Viewer
+实验工具：ENVI5.3 
 实验内容：二级遥感影像出图
 实验目的：考察对遥感数字图像处理的掌握
 
+-_-老师给的实验数据实在是过于模糊，而且年代久远，所以决定自己重新下载遥感影像
+第一次下载的影响是在LocaSpace View，但数据是做好几何校正的了，而且也不知道数据的投影信息
+现在用的数据是USGS，数据获取教程参考了这个 http://blog.csdn.net/qq_36305327/article/details/71154996
+
 ----|实验数据获取|----
-USGA https://glovis.usgs.gov/
+USGA https://earthexplorer.usgs.gov/  //注意哦，跟http://glovis.usgs.gov/是不一样的
 
 ----|知识点补充|----
  -Map Info 地图信息
