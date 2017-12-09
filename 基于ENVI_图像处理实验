@@ -4,20 +4,19 @@
 实验内容：二级遥感影像的处理
 实验目的：考察对遥感数字图像处理的掌握：1)几何校正；2)地物分类
 
-P.S -_-老师给的实验数据分辨率低，年代久远，控制点不好选取，所以决定自己重新下载遥感影像
-    第一次下载的影像是在LocaSpace View，但数据是做好几何校正的了，我也不知道怎么获取数据的投影信息
+P.S -_-老师给的实验数据年代久远，控制点不好选取，所以决定自己重新下载遥感影像
+    第一次下载的影像是在LocaSpace View，但数据是做好几何校正的了，且波段数据只有RGB波段
     现在用的数据是USGS中下载的Landsat8数据，也是做好几何校正的了，那就只好做一下分类了咯
-
 
 ----实验数据获取----
 USGA https://earthexplorer.usgs.gov/  
-!!NOT!! http://glovis.usgs.gov/
-*步骤参考 http://blog.csdn.net/qq_36305327/article/details/71154996
+ !!NOT USGS.gov!!
+ *操作参考 http://blog.csdn.net/qq_36305327/article/details/71154996
 
 ----知识点补充----
  -Landsat 8 波段信息
   -OLI(Operational Land Imager) 陆地成像仪            
-   ·Band 1 Coastal
+   ·Band 1 Coastal 蓝色波段（新增），主要应用于海岸带观测
    ·Band 2 Blue
    ·Band 3 Green
    ·Band 4 Red
@@ -25,7 +24,7 @@ USGA https://earthexplorer.usgs.gov/
    ·Band 6 SWIR1
    ·Band 7 SWIR2
    ·Band 8 Pan
-   ·Band 9 Cirrus
+   ·Band 9 Cirrus 短波红外波段，包括水汽强吸收特征可用于云检测
   -TIRS(Thermal Infrared Sensor) 热红外传感器
    ·Band 10 TIRS1
    ·Band 11 TIRS2
@@ -35,15 +34,39 @@ USGA https://earthexplorer.usgs.gov/
   ·Datum 基准面
   ·UL Geo 地理坐标经纬度
   ·UL Map 地图坐标
- 
+ -Landsat8 波段组合
+  ·
+  ·
+  ·
+  ·
+ -影像中(*.enp)是金字塔
+*资料参考
+    Landsat 8 - https://baike.baidu.com/item/landsat8/5644767?fr=aladdin
+    Map Info - https://zhidao.baidu.com/question/497009683.html
+    Landsat8 波段组合 - http://blog.sina.com.cn/s/blog_764b1e9d0102vo11.html
 
 ----存在问题----
-1.下载的遥感影像数据
+Q:LocaSpace影像数据 （已解决）
  -Map Info
   ·Pixel 0.000021 Degrees 影像空间分辨率的单位
   ·UL Map 没有地图坐标的信息
+ -波段只有RGB波段 
+A:从USGS中下载影像
 
 ----实验步骤----
+图像合并
+    合并操作：主菜单File->Sava File as->ENVI Standard
+    "Import File" 选择合并波段
+    "Reorder File" 波段重新排序
+图像裁剪
+    裁剪操作：Basic Tools->Resize Data
+    "Select Input File" 选择裁剪文件
+    "Spatial Subset" 空间子集（空间范围裁剪）
+        Image 基于显示的图像Image，在图像上确定矩形范围
+
+图像分类
+
+
 1.几何校正
   选取控制点
   投影
