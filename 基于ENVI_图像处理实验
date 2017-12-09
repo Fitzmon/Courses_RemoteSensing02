@@ -1,0 +1,65 @@
+遥感数字图像综合性实验报告
+
+实验工具：ENVI5.3 
+实验内容：二级遥感影像的处理
+实验目的：考察对遥感数字图像处理的掌握：1)几何校正；2)地物分类
+
+P.S -_-老师给的实验数据分辨率低，年代久远，控制点不好选取，所以决定自己重新下载遥感影像
+    第一次下载的影像是在LocaSpace View，但数据是做好几何校正的了，我也不知道怎么获取数据的投影信息
+    现在用的数据是USGS中下载的Landsat8数据，也是做好几何校正的了，那就只好做一下分类了咯
+
+
+----实验数据获取----
+USGA https://earthexplorer.usgs.gov/  
+!!NOT!! http://glovis.usgs.gov/
+*步骤参考 http://blog.csdn.net/qq_36305327/article/details/71154996
+
+----知识点补充----
+ -Landsat 8 波段信息
+  -OLI(Operational Land Imager) 陆地成像仪            
+   ·Band 1 Coastal
+   ·Band 2 Blue
+   ·Band 3 Green
+   ·Band 4 Red
+   ·Band 5 NIR
+   ·Band 6 SWIR1
+   ·Band 7 SWIR2
+   ·Band 8 Pan
+   ·Band 9 Cirrus
+  -TIRS(Thermal Infrared Sensor) 热红外传感器
+   ·Band 10 TIRS1
+   ·Band 11 TIRS2
+ -Map Info 地图信息
+  ·Proj 投影
+  ·Pixel 影像空间分辨率
+  ·Datum 基准面
+  ·UL Geo 地理坐标经纬度
+  ·UL Map 地图坐标
+ 
+
+----存在问题----
+1.下载的遥感影像数据
+ -Map Info
+  ·Pixel 0.000021 Degrees 影像空间分辨率的单位
+  ·UL Map 没有地图坐标的信息
+
+----实验步骤----
+1.几何校正
+  选取控制点
+  投影
+  *控制点要分散均匀选取，防止外推；在外围区域多选取控制点
+  校正（采样） 误差RMS需要<1.0
+  二次多项式 双线性内插法
+2.分类
+  训练区选取->提纯
+  先做非监督分类（迭代次数至少为4次）得出大致有几类
+  除了最大似然法还有面向对象法、深度学习等等
+3.样本检验
+  直方图
+  
+  
+  
+  
+  
+  
+  ©Finn All Rights Reserved
